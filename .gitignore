@@ -1,0 +1,5 @@
+.vagrant
+Puppetfile.lock
+modules
+.librarian
+.tmp
