@@ -39,13 +39,11 @@ class Hiera
 
         Backend.datasources(scope, order_override) do |source|
           Hiera.debug("Looking for data source #{source} in module #{scope["module_name"]}")
-          # yamlfile = Backend.datafile(:yaml, scope, source, "yaml") || next
 
           mod = Puppet::Module.find(scope["module_name"], scope["environment"])
-          path = mod.path
-          Hiera.debug("Module directory is #{path}")
+          Hiera.debug("Module directory is #{mod.path}")
 
-          yamlfile = File.join(path, "data", "%s.yaml" % Backend.parse_string(source, scope))
+          yamlfile = File.join(mod.path, "data", "%s.yaml" % Backend.parse_string(source, scope))
           Hiera.debug("Checking for YAML file #{yamlfile}")
 
           next unless File.exist?(yamlfile)
