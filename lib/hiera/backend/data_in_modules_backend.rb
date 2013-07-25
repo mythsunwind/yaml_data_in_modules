@@ -46,7 +46,7 @@ class Hiera
           Hiera.debug("Module directory is #{path}")
 
           yamlfile = File.join(path, "data", "%s.yaml" % Backend.parse_string(source, scope))
-          Hiera.debug("YAML file path is #{yamlfile}")
+          Hiera.debug("Checking for YAML file #{yamlfile}")
 
           next unless File.exist?(yamlfile)
 
