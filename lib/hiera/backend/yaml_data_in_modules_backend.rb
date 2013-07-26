@@ -1,9 +1,9 @@
 class Hiera
   module Backend
-    class Data_in_modules_backend
+    class Yaml_data_in_modules_backend
       def initialize(cache=nil)
         require 'yaml'
-        Hiera.debug("Hiera Data in modules backend starting")
+        Hiera.debug("Hiera YAML Data in modules backend starting")
 
         @cache = cache || Filecache.new
       end
