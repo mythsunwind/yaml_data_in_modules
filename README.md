@@ -1,4 +1,4 @@
-## hiera_data_in_modules : a data in modules backend for Hiera
+## yaml_data_in_modules : a data in modules backend for Hiera
 
 ### Description
 
@@ -9,14 +9,14 @@ This backend will check for yaml files in a directory called "data" of the curre
 Add this module to your Puppetfile to install "data in modules" as a new backend
 
     mod 'data_in_modules',
-        :git => "git@git.spreadomat.net:svj/data_in_modules.git"
+        :git => "git@git.spreadomat.net:svj/yaml_data_in_modules.git"
 
 ### How to use it with hiera
 
 Add the backend to your hiera.yaml
 
     :backends:
-      - data_in_modules
+      - yaml_data_in_modules
       - yaml
     :hierarchy:
       - %{environment}-%{platform}-%{cluster}-%{hostname}
