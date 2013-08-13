@@ -21,11 +21,23 @@ Add the backend to your hiera.yaml
       - yaml_data_in_modules
       - yaml
     :hierarchy:
-      - %{environment}-%{platform}-%{cluster}-%{hostname}
-      - %{environment}-%{platform}-%{cluster}
-      - %{environment}-%{platform}
-      - %{environment}
+      - %{context}-%{platform}-%{cluster}-%{hostname}
+      - %{context}-%{platform}-%{cluster}
+      - %{context}-%{platform}
+      - %{context}
       - common
 
 The above configuration will check hierachically in the data directory for yaml files with the specified names. If it didn't found any files with the given names (concatinated with facts and common.yaml), the above configuration will then switch to the normal yaml backend and check at the central location.
 
+### How to add data to your module
+
+In your module path create a directory called *data* and add yaml files into it.
+
+    modules/example_module/
+                          + files
+                          + manifests
+                          + templates
+                          + data
+                            + dev-eu--vm116.yaml
+                            + qa-na.yaml
+                            + common.yaml
