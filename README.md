@@ -2,6 +2,7 @@
 
 ### Requirement
 
+puppet >= 3.2.3
 hiera >= 1.2.1
 
 ### Description
@@ -14,8 +15,6 @@ Add this module to your Puppetfile to install "data in modules" as a new backend
 
     mod 'yaml_data_in_modules',
         :git => "git@git.spreadomat.net:yaml_data_in_modules.git"
-
-Make sure you are running a puppet version >= 3.2.3
 
 ### How to use it with hiera
 
