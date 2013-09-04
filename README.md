@@ -1,5 +1,9 @@
 ## yaml_data_in_modules : a data in modules backend for Hiera
 
+### Requirement
+
+hiera >= 1.2.1
+
 ### Description
 
 This backend will check for yaml files in a directory called "data" of the current puppet module.
