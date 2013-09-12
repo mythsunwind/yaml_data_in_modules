@@ -24,9 +24,10 @@ Add the backend to your hiera.yaml
       - yaml_data_in_modules
       - yaml
     :hierarchy:
-      - %{context}-%{platform}-%{cluster}-%{hostname}
-      - %{context}-%{platform}-%{cluster}
-      - %{context}-%{platform}
+      - %{context}-%{datacenter}-%{platform}-%{cluster}-%{hostname}
+      - %{context}-%{datacenter}-%{platform}-%{cluster}
+      - %{context}-%{datacenter}-%{platform}
+      - %{context}-%{datacenter}
       - %{context}
       - common
 
