@@ -45,3 +45,13 @@ In your module path create a directory called *data* and add yaml files into it.
                             + dev-eu--vm116.yaml
                             + qa-na.yaml
                             + common.yaml
+
+Add a variable to your yaml files
+
+    version : "1.23.4-567"
+    
+Use the following syntax to use this variable in your module
+
+    class my_module {
+      $version = hiera("version")
+    }
